@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    background: #222435;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('./assets/bg.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+*:focus{
+    outline:none;
+}
+
+h1 {
+    font-weight: 900;
+    color: #7d83b9;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    display: flex;
+    width: 600px;
+    height: 60px;
+    margin: 30px auto;
+    margin-bottom: 60px;
+}
+
+input{
+    display: flex;
+    width: 100%;
+    height:60px;
+    background: #2d3046;
+    border: none;
+    border-radius:8px 0 0 8px;
+    font-size:16px;
+    color: white;
+    padding:0 16px;
+}
+
+button.add {
+    position: absolute;
+    top:0;
+    right:0;
+    background:#363b75;
+    border:none;
+    color:white;
+    cursor:pointer;
+    padding: 10px 25px;
+    height:60px;
+    border-radius: 0 8px 8px 0;
+    font-size:16px;
+}
+
+button.add:hover{
+    background:#363f88;
+}
+
+.listaTarefas {
+    display: flex;
+    justify-content:center;
+    flex-flow:column wrap;
+    width:600px;
+    margin:auto;
+}
+
+.item {
+    display:flex;
+    justify-content:space-between;
+    border:1px solid #363b65;
+    border-radius:0 8px 8px 0;
+    padding:0px 0px 0px 16px;
+    margin-bottom:10px;
+    cursor: pointer;
+}
+
+.item:hover{
+    background:#151627;
+}
+
+.item span{
+    width: 100%;
+    color: white;
+    margin-right: 10px;
+    padding: 12px 16px;
+}
+
+.item.completo{
+    display:flex;
+    justify-content:space-between;
+    background:#1e1f2e;
+    border:none;
+    border-radius:0 8px 8px 0;
+    padding:0px 0px 0px 16px;
+    margin-bottom:10px;
+    cursor: pointer;
+    transparency:0.5; 
+}
+
+.item.completo span{
+    width: 100%;
+    color: #4d506e;
+    text-decoration: line-through;
+    margin-right: 10px;
+    padding: 12px 16px;
+}
+
+button.del{
+    background:none;
+    border:none;
+    color:#4d506e;
+    padding:16px;
+    cursor:pointer;
+}
+
+button.del:hover{
+    background:#ff004c;
+    border:none;
+    color:white;
+    padding:16px;
+    cursor:pointer;
+}
+button.deleteAll {
+    display: inline-block;
+    margin:40px;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid #ff004c;
+    border-radius:4px;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+   }
+   
+button.deleteAll::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff004c;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+   }
+   
+button.deleteAll:hover::before {
+    transform: translateX(0);
+   }
+
+.img-lista-vazia {
+    width: 90%;
+}
+
+@media screen and (max-width: 900px){
+    form{
+        width: 100%;
+    }
+    .listaTarefas {
+        width: 100%;
+    }
+}
